@@ -55,3 +55,19 @@ function totalAmount(bill, service) {
 }
 totalAmount(100, 'good');
 totalAmount(40, 'fair');
+
+// 6) Write a function splitAmount that takes the bill amount and the level of service, and the number of people to split the bill between. It will return the final amount for each person.
+function splitAmount(bill, service, guests) {
+  var good = 0.20;
+  var fair = 0.15;
+  var bad = 0.10;
+  if (service == 'good') {
+    console.log((bill += (bill * good))/guests);
+  } else if (service == 'fair') {
+    console.log((bill += (bill * fair))/guests);
+  } else if (service == 'bad') {
+    console.log((bill += (bill * bad))/guests);
+  }
+}
+splitAmount(100, 'good', 5);
+splitAmount(40, 'fair', 2);
