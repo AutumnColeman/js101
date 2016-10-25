@@ -26,15 +26,12 @@ madlib('Autumn', 'Python');
 // bad -> 10%
 
 function tipAmount(bill, service) {
-  var good = 0.20;
-  var fair = 0.15;
-  var bad = 0.10;
   if (service == 'good') {
-    console.log(bill * good);
+    return bill * 0.20;
   } else if (service == 'fair') {
-    console.log(bill * fair);
+    return bill * 0.15;
   } else if (service == 'bad') {
-    console.log(bill * bad);
+    return bill * 0.10;
   }
 }
 tipAmount(100, 'good');
@@ -42,33 +39,17 @@ tipAmount(40, 'fair');
 
 // 5) Write a function totalAmount that takes the same arguments as tipAmount except it returns the total as the tip amount plus the bill amount. This function may make use of tipAmount as a sub-task.
 function totalAmount(bill, service) {
-  var good = 0.20;
-  var fair = 0.15;
-  var bad = 0.10;
-  if (service == 'good') {
-    console.log(bill += bill * good);
-  } else if (service == 'fair') {
-    console.log(bill += bill * fair);
-  } else if (service == 'bad') {
-    console.log(bill += bill * bad);
+  var tip = tipAmount(bill, service);
+    return tip + bill;
   }
-}
 totalAmount(100, 'good');
 totalAmount(40, 'fair');
 
 // 6) Write a function splitAmount that takes the bill amount and the level of service, and the number of people to split the bill between. It will return the final amount for each person.
 function splitAmount(bill, service, guests) {
-  var good = 0.20;
-  var fair = 0.15;
-  var bad = 0.10;
-  if (service == 'good') {
-    console.log((bill += (bill * good))/guests);
-  } else if (service == 'fair') {
-    console.log((bill += (bill * fair))/guests);
-  } else if (service == 'bad') {
-    console.log((bill += (bill * bad))/guests);
-  }
-}
+  var total = totalAmount(bill, service);
+   return total / guests;
+ }
 splitAmount(100, 'good', 5);
 splitAmount(40, 'fair', 2);
 
@@ -102,3 +83,18 @@ function printSquare(size) {
   }
 }
 printSquare(5);
+
+// 9) Write function printBox which is given a width and height and prints a hollow box of those given dimensions.
+function printBox(x, y) {
+  var row = "";
+  for (var i = 0; i <= x; i++) {
+    row += "*";
+  }
+  console.log(row);
+  for (var j = 0; j <= (y - 2); j++) {
+    var empty = " ";
+    console.log(empty);
+  }
+  console.log(row);
+}
+printBox(6, 4);
