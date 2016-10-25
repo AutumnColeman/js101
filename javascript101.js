@@ -19,8 +19,39 @@ function madlib(name, subject) {
 }
 madlib('Autumn', 'Python');
 
-4) Write a function tipAmount that is given the bill amount and the level of service (one of good, fair and poor) and returns the dollar amount for the tip. Based on:
+// 4) Write a function tipAmount that is given the bill amount and the level of service (one of good, fair and poor) and returns the dollar amount for the tip. Based on:
+//
+// good -> 20%
+// fair -> 15%
+// bad -> 10%
 
-good -> 20%
-fair -> 15%
-bad -> 10%
+function tipAmount(bill, service) {
+  var good = 0.20;
+  var fair = 0.15;
+  var bad = 0.10;
+  if (service == 'good') {
+    console.log(bill * good);
+  } else if (service == 'fair') {
+    console.log(bill * fair);
+  } else if (service == 'bad') {
+    console.log(bill * bad);
+  }
+}
+tipAmount(100, 'good');
+tipAmount(40, 'fair');
+
+// 5) Write a function totalAmount that takes the same arguments as tipAmount except it returns the total as the tip amount plus the bill amount. This function may make use of tipAmount as a sub-task.
+function totalAmount(bill, service) {
+  var good = 0.20;
+  var fair = 0.15;
+  var bad = 0.10;
+  if (service == 'good') {
+    console.log(bill += bill * good);
+  } else if (service == 'fair') {
+    console.log(bill += bill * fair);
+  } else if (service == 'bad') {
+    console.log(bill += bill * bad);
+  }
+}
+totalAmount(100, 'good');
+totalAmount(40, 'fair');
