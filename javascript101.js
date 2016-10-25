@@ -71,3 +71,11 @@ function splitAmount(bill, service, guests) {
 }
 splitAmount(100, 'good', 5);
 splitAmount(40, 'fair', 2);
+
+// 7) Write a function printNumbers which is given a start number and an end number. It will print the numbers from one to the other, one per line:
+function printNumbers(strt, end) {
+  for (var i = strt; i <= end; i++){
+    console.log(i);
+  }
+}
+printNumbers(1, 10);

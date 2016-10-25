@@ -15,3 +15,5 @@ bad -> 10%
 5) Write a function totalAmount that takes the same arguments as tipAmount except it returns the total as the tip amount plus the bill amount. This function may make use of tipAmount as a sub-task.
 
 6) Write a function splitAmount that takes the bill amount and the level of service, and the number of people to split the bill between. It will return the final amount for each person.
+
+7) Write a function printNumbers which is given a start number and an end number. It will print the numbers from one to the other, one per line:
