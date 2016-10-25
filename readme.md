@@ -17,3 +17,5 @@ bad -> 10%
 6) Write a function splitAmount that takes the bill amount and the level of service, and the number of people to split the bill between. It will return the final amount for each person.
 
 7) Write a function printNumbers which is given a start number and an end number. It will print the numbers from one to the other, one per line:
+
+8) Write a function printSquare which is given a size and prints a square of that size using asterisks.

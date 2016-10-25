@@ -72,10 +72,33 @@ function splitAmount(bill, service, guests) {
 splitAmount(100, 'good', 5);
 splitAmount(40, 'fair', 2);
 
-// 7) Write a function printNumbers which is given a start number and an end number. It will print the numbers from one to the other, one per line:
+// 7) Write a function printNumbers which is given a start number and an end number. It will print the numbers from one to the other, one per line. Write two versions of the above function. One using a while loop and the other using a for loop.
+//for loop
 function printNumbers(strt, end) {
   for (var i = strt; i <= end; i++){
     console.log(i);
   }
 }
 printNumbers(1, 10);
+
+//while loop
+function printNumbers(strt, end) {
+  var i = strt;
+  while (i <= end) {
+    console.log(i);
+    i += 1;
+  }
+}
+printNumbers(1, 10);
+
+// 8) Write a function printSquare which is given a size and prints a square of that size using asterisks.
+function printSquare(size) {
+  var row = "";
+  for (var i = 0; i <= size; i++) {
+    row += "*";
+  }
+  for (var j = 0; j <= size; j++) {
+    console.log(row);
+  }
+}
+printSquare(5);
