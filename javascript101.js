@@ -98,3 +98,61 @@ function printBox(x, y) {
   console.log(row);
 }
 printBox(6, 4);
+
+// 10) Write a function printBanner which is given some text and prints a banner with a border surrounding the text. The border has to stretch to the length of the text.
+function strMultiply(str, size) {
+  var line = '';
+  for (var j = 0; j < size; j++) {
+    line += str;
+  }
+  return line;
+}
+
+function printBanner(text) {
+  var width = text.length + 4;
+  var height = 3;
+  var stars = strMultiply('*', width);
+  var middleLine = '* ' + text + ' *';
+  console.log(stars);
+  for (var i = 0; i < height - 2; i++) {
+    console.log(middleLine);
+  }
+  console.log(stars);
+}
+
+printBanner('Welcome to DigitalCrafts');
+
+
+// 11) Write a function factors which is given a number and returns an array containing all its factors.
+function factors(number) {
+  var sqrt = Math.sqrt(number);
+  var factors = [];
+  for (var i = 0; i < sqrt; i++) {
+    if (number % sqrt === 0) {
+        factors.push(i);
+        factors.push(number/i);
+    }
+  }
+}
+console.log(factors(50));
+
+// 12) Write a function cipher which is given a string and returns the Caesar cipher of the string.
+function cipher(message) {
+  var alpha_list = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".split('');
+  var cipher_list = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm".split('');
+  var new_string = "";
+
+  for(var i = 0; i < message.length; i++){
+    var char = message[i];
+    var idx = alpha_list.indexOf(char);
+    var newChar = cipher_list[idx];
+    if (!newChar) {
+      new_string += char;
+    }
+    else {
+      new_string += newChar;
+    }
+  }
+  return new_string;
+}
+cipher('Genius without education is like silver in the mine');
